@@ -171,20 +171,45 @@
     </section>
 
    
-    <!-- CONTACT -->
-    <section id="contact" class="wrap">
-      <div class="section-title"><h2>Contact</h2><div class="line"></div></div>
-      <div class="card">
-        <p>Interested in working together or discussing a role? Send a message:</p>
-        <form onsubmit="event.preventDefault(); alert('Thanks! Your message was captured locally. Configure form action to route submissions (e.g., Formspree, Netlify Forms).');">
-          <label>Name<br /><input type="text" name="name" required></label><br /><br />
-          <label>Email<br /><input type="email" name="email" required></label><br /><br />
-          <label>Message<br /><textarea name="message" required></textarea></label><br />
-          <button class="btn" type="submit">Send</button>
-          <p class="note">Tip: connect this form to a static form service for production.</p>
-        </form>
-      </div>
-    </section>
+  <!-- CONTACT FORM (theme-integrated) -->
+<div id="contactAlerts" class="mb-3" aria-live="polite" aria-atomic="true"></div>
+
+<form
+  id="contactForm"
+  class="card-dark p-3"
+  action="https://formspree.io/f/mvgqyoby"
+  method="POST"
+  novalidate
+>
+  <!-- Name -->
+  <div class="mb-3">
+    <label for="name" class="form-label">Your name</label>
+    <input type="text" id="name" name="name" class="form-control" required autocomplete="name" />
+  </div>
+
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Your email</label>
+    <input type="email" id="email" name="email" class="form-control" required autocomplete="email" />
+  </div>
+
+  <!-- Message -->
+  <div class="mb-3">
+    <label for="message" class="form-label">Your message</label>
+    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+  </div>
+
+  <!-- Optional: subject line you’ll see in the email -->
+  <input type="hidden" name="_subject" value="New message from your portfolio site" />
+
+  <!-- Honeypot (spam reducer) -->
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+
+  <button type="submit" id="contactSubmit" class="btn btn-primary">
+    Send
+  </button>
+</form>
+
 
     <footer class="wrap">
       <p class="foot">© <span id="y"></span> Phill Marquis · Business Systems Analyst</p>
