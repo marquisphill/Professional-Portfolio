@@ -19,6 +19,8 @@
       --shadow: 0 8px 24px rgba(0,0,0,.35);
     }
 
+    html { scroll-behavior: smooth; }
+
     /* Smooth dark gradient backdrop */
     body {
       background: radial-gradient(1200px 800px at 10% -10%, #151927, transparent 60%),
@@ -170,7 +172,7 @@
           <span class="chip"><i class="bi bi-kanban"></i> Scrum & Process</span>
           <span class="chip"><i class="bi bi-diagram-3"></i> Integrations</span>
         </div>
-        <h1 class="mb-3">I build clear systems and case‑study‑worthy outcomes.</h1>
+        <h1 class="mb-3">I build clear systems and case-study-worthy outcomes.</h1>
         <p class="lead mb-4">From finance waterfall integrations to Logicbroker + NetSuite workflows, I translate business goals into shipped features, measurable results, and clean documentation.</p>
         <div class="d-flex gap-2 flex-wrap">
           <a href="#projects" class="btn btn-primary"><i class="bi bi-collection"></i> View Projects</a>
@@ -199,7 +201,7 @@
           <article class="card-dark h-100">
             <img src="images/project1.png" class="card-img-top" alt="Custom Back-End Rebate System UI" />
             <div class="card-body">
-              <h3 class="h5">Custom Back‑End Rebate System</h3>
+              <h3 class="h5">Custom Back-End Rebate System</h3>
               <p class="mb-2 flex-grow-1">Led requirements (BRD/FSD) and Scrum delivery for a rebate application used by Merchandising & Accounting. Integrated Logicbroker + NetSuite for automated remittance; partnered with Engineering for UAT and launch readiness.</p>
               <div class="d-flex gap-1 mb-3 flex-wrap">
                 <span class="badge text-bg-dark border badge-soft">BRD/FSD</span>
@@ -220,7 +222,7 @@
             <img src="images/project2.png" class="card-img-top" alt="Finance Waterfall Integration diagram" />
             <div class="card-body">
               <h3 class="h5">Finance Waterfall Integration</h3>
-              <p class="mb-2 flex-grow-1">Acted as BA/PM to onboard waterfall lending to retailer sites. Coordinated cross‑functional teams, refined edge cases, and delivered measurable lift in conversion with clear analytics instrumentation.</p>
+              <p class="mb-2 flex-grow-1">Acted as BA/PM to onboard waterfall lending to retailer sites. Coordinated cross-functional teams, refined edge cases, and delivered measurable lift in conversion with clear analytics instrumentation.</p>
               <div class="d-flex gap-1 mb-3 flex-wrap">
                 <span class="badge text-bg-dark border badge-soft">eComm</span>
                 <span class="badge text-bg-dark border badge-soft">Analytics</span>
@@ -239,8 +241,8 @@
           <article class="card-dark h-100">
             <img src="images/project3.png" class="card-img-top" alt="Catalog-as-a-Service workflow" />
             <div class="card-body">
-              <h3 class="h5">Catalog‑as‑a‑Service (CaaS)</h3>
-              <p class="mb-2 flex-grow-1">Defined process workflows and documentation for the company’s first CaaS revenue‑share program. Collaborated with Legal, Product, and Sales; delivered SOWs and an MSA aligned to business goals.</p>
+              <h3 class="h5">Catalog-as-a-Service (CaaS)</h3>
+              <p class="mb-2 flex-grow-1">Defined process workflows and documentation for the company’s first CaaS revenue-share program. Collaborated with Legal, Product, and Sales; delivered SOWs and an MSA aligned to business goals.</p>
               <div class="d-flex gap-1 mb-3 flex-wrap">
                 <span class="badge text-bg-dark border badge-soft">Process</span>
                 <span class="badge text-bg-dark border badge-soft">SOW/MSA</span>
@@ -267,14 +269,14 @@
           <div class="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <h3 class="h6 mb-0">Business Systems Analyst · FlexShopper</h3>
-              <p class="mb-1 text-secondary">E‑commerce · Integrations · Analytics</p>
+              <p class="mb-1 text-secondary">E-commerce · Integrations · Analytics</p>
             </div>
             <div class="text-secondary">2023 — 2025</div>
           </div>
           <ul class="mb-3">
             <li>Maintained Logicbroker for merchandising/accounting/ops; coordinated vendor onboarding and catalog approvals.</li>
             <li>Partnered with Risk/Finance to roll out waterfall financing; defined acceptance criteria and success metrics.</li>
-            <li>Drove UAT and launch readiness with defect triage and cross‑team communication.</li>
+            <li>Drove UAT and launch readiness with defect triage and cross-team communication.</li>
           </ul>
         </div>
         <!-- Duplicate this block for more roles -->
@@ -307,7 +309,7 @@
       </div>
       <div class="row g-4 align-items-center">
         <div class="col-lg-8">
-          <p class="mb-3">I’m a detail‑oriented BSA who loves turning ambiguity into clear roadmaps. My happy place is the space between business needs and technical delivery—facilitating discovery, writing crisp requirements, and partnering with engineering to ship value.</p>
+          <p class="mb-3">I’m a detail-oriented BSA who loves turning ambiguity into clear roadmaps. My happy place is the space between business needs and technical delivery—facilitating discovery, writing crisp requirements, and partnering with engineering to ship value.</p>
           <p class="mb-0">Outside of work: classical guitar, writing short stories, and sound design experiments.</p>
         </div>
         <div class="col-lg-4">
@@ -327,7 +329,7 @@
     <section id="contact" class="module">
       <div class="module-header">
         <h2 class="module-title"><i class="bi bi-send"></i> Contact</h2>
-        <span class="module-kicker">Let’s talk</span>
+      <div class="module-kicker">Let’s talk</div>
       </div>
       <div class="row g-4">
         <div class="col-lg-6">
@@ -384,6 +386,7 @@
     const saved = localStorage.getItem('theme');
     if (saved === 'light' || saved === 'dark') {
       document.documentElement.setAttribute('data-bs-theme', saved);
+      toggle.innerHTML = saved === 'dark' ? '<i class="bi bi-moon-stars"></i>' : '<i class="bi bi-sun"></i>';
     }
     toggle.addEventListener('click', () => {
       const current = root.getAttribute('data-bs-theme') || 'dark';
@@ -391,6 +394,23 @@
       root.setAttribute('data-bs-theme', next);
       localStorage.setItem('theme', next);
       toggle.innerHTML = next === 'dark' ? '<i class="bi bi-moon-stars"></i>' : '<i class="bi bi-sun"></i>';
+    });
+
+    // Close navbar collapse after clicking a nav link (mobile)
+    const navbarCollapseEl = document.getElementById('nav');
+    const navLinks = navbarCollapseEl.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href') || '';
+        // Only collapse for in-page anchors
+        if (href.startsWith('#')) {
+          const collapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl, { toggle: false });
+          if (navbarCollapseEl.classList.contains('show')) {
+            collapse.hide();
+          }
+        }
+      });
     });
   </script>
 </body>
