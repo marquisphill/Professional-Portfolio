@@ -173,7 +173,7 @@
 
 <!-- EXPERIENCE (collapsible, self-contained styles) -->
 <section id="experience" class="xp-module">
-  <details class="xp-card" open>
+ <details id="xp-details" class="xp-card">
     <summary class="xp-header">
       <h2 class="xp-title">Experience</h2>
       <span class="xp-kicker">Expand to view roles and outcomes</span>
@@ -409,5 +409,23 @@
   </main>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+
+  <!-- Opens the Experiences section when user clicks through the experience href -->
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const xpDetails = document.getElementById("xp-details");
+
+  // Check if the hash in the URL is "#experience"
+  if (window.location.hash === "#experience") {
+    xpDetails.setAttribute("open", "true");
+    // Optional: scroll to the section
+    xpDetails.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+</script>
+
+
+  
 </body>
 </html>
