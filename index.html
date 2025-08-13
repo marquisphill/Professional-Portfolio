@@ -173,10 +173,10 @@
 
 <!-- EXPERIENCE (collapsible, self-contained styles) -->
 <section id="experience" class="xp-module">
- <details id="xp-details" class="xp-card">
+  <details id="xp-details" class="xp-card">
     <summary class="xp-header">
       <h2 class="xp-title">Experience</h2>
-      <span class="xp-kicker">Expand to view roles and outcomes</span>
+      <span class="xp-kicker">Roles &amp; outcomes</span>
       <span class="xp-caret" aria-hidden="true"></span>
     </summary>
 
@@ -413,17 +413,45 @@
 
   <!-- Opens the Experiences section when user clicks through the experience href -->
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const xpDetails = document.getElementById("xp-details");
+(function () {
+  const details = document.getElementById('xp-details');
+  const section  = document.getElementById('experience');
 
-  // Check if the hash in the URL is "#experience"
-  if (window.location.hash === "#experience") {
-    xpDetails.setAttribute("open", "true");
-    // Optional: scroll to the section
-    xpDetails.scrollIntoView({ behavior: "smooth", block: "start" });
+  function openExperience() {
+    if (!details.open) details.open = true;
+    // Smooth scroll to align the card nicely
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-});
+  function closeExperience() {
+    if (details.open) details.open = false;
+  }
+
+  // 1) Initial load: open only if URL already has #experience
+  if (location.hash === '#experience') openExperience();
+  else closeExperience();
+
+  // 2) In-page navigation: click any link that targets #experience
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href="#experience"]');
+    if (!anchor) return;
+    e.preventDefault();           // stop browser’s default jump
+    openExperience();             // open, then scroll
+    history.pushState(null, '', '#experience'); // keep the hash in the URL
+  });
+
+  // 3) Hash changes (e.g., user clicks other section links)
+  window.addEventListener('hashchange', () => {
+    if (location.hash === '#experience') openExperience();
+    else closeExperience();
+  });
+
+  // 4) Nice offset if you have a sticky navbar
+  // (Adjust 84 to your navbar height)
+  document.documentElement.style.scrollBehavior = 'smooth';
+  document.querySelectorAll('section').forEach(s => s.style.scrollMarginTop = '84px');
+})();
 </script>
+
 
 
   
