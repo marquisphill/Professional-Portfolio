@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Professional Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Phillip Da Silva-Marquis — Portfolio</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom styles (optional, keep file name if you have one) -->
+  <link rel="stylesheet" href="style.css" />
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; }
+    #hero { min-height: 60vh; background: #0d6efd linear-gradient(180deg, rgba(13,110,253,0.85), rgba(13,110,253,0.7)); }
+    #hero .btn { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .shadow-sm { box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05) !important; }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-semibold" href="#">Your Name</a>
+      <a class="navbar-brand fw-semibold" href="#">Phillip Da Silva-Marquis</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,83 +41,85 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header id="hero" class="d-flex align-items-center text-white text-center">
     <div class="container py-5">
-      <h1 class="display-3 fw-bold">Your Name</h1>
-      <p class="lead mb-4">Professional Title or Tagline</p>
-      <a href="#contact" class="btn btn-primary btn-lg">Get In Touch</a>
+      <h1 class="display-3 fw-bold">Phillip Da Silva-Marquis</h1>
+      <p class="lead mb-4">Business Systems Analyst • Agile PM • E-commerce Integrations</p>
+      <a href="#contact" class="btn btn-light btn-lg">Get In Touch</a>
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <h2 class="mb-4">About Me</h2>
-          <p>Use this section to provide a concise summary of your professional background. Highlight your key achievements, areas of expertise and what drives your passion. Replace this text with a few paragraphs that tell your story in a compelling way.</p>
-          <p>You might mention your years of experience, the industries you’ve worked in, and any notable accomplishments. Keep it conversational and authentic so visitors feel they’re getting to know the person behind the resume.</p>
+          <p>I’m a detail-oriented Business Systems Analyst with 8+ years of experience delivering enterprise technology initiatives across e-commerce, product data operations, and third-party integrations. I specialize in translating business needs into clear BRDs/FSDs and actionable user stories, facilitating Agile ceremonies, and partnering with engineering, product, legal, accounting, and merchandising to ship work that matters.</p>
+          <p>Recently at FlexShopper, I led requirements and Scrum activities for a custom back-end rebate system, coordinated the Logicbroker + NetSuite integration to automate vendor remittance and onboarded 35+ vendors, and helped launch category microsites with integrated finance waterfall functionality. Earlier at Pet Supermarket, I served as product owner for the Syndigo Riversand PIM, scaled operations to 14k+ SKUs and 200+ vendor onboardings, and drove integrations with SFCC, Feedonomics, and Bazaarvoice. I love clean processes, crisp documentation, and predictable delivery.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Experience -->
   <section id="experience" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4">Experience</h2>
-      <!-- Experience Item 1 -->
+
       <div class="card mb-3 shadow-sm">
         <div class="card-body">
-          <h4 class="card-title mb-1">Position Title</h4>
-          <h6 class="card-subtitle mb-3 text-muted">Company Name &middot; Start Year – End Year</h6>
+          <h4 class="card-title mb-1">Business Systems Analyst / Project Manager (Merchandising)</h4>
+          <h6 class="card-subtitle mb-3 text-muted">FlexShopper Inc. · Nov 2023 – Aug 2025</h6>
           <ul class="mb-0">
-            <li>Describe a responsibility or accomplishment in this role.</li>
-            <li>Highlight another key task or achievement.</li>
-            <li>Consider quantifying your impact with metrics where possible.</li>
+            <li>Led Scrum ceremonies (standups, refinement, sprint planning) to improve delivery cadence and team accountability.</li>
+            <li>Translated business requirements into BRDs/FSDs and user stories for a custom back-end rebate system and accounting remittance workflows.</li>
+            <li>Drove Logicbroker integration with NetSuite; streamlined vendor onboarding and automated invoicing/remittance for 35+ vendors.</li>
+            <li>Co-authored CaaS MSA, drafted SOWs, and launched category microsites with integrated finance waterfall functionality; coordinated UAT and post-launch fixes across financing at checkout, OMS, and billing apps.</li>
           </ul>
         </div>
       </div>
-      <!-- Experience Item 2 -->
+
       <div class="card mb-3 shadow-sm">
         <div class="card-body">
-          <h4 class="card-title mb-1">Position Title</h4>
-          <h6 class="card-subtitle mb-3 text-muted">Company Name &middot; Start Year – Present</h6>
+          <h4 class="card-title mb-1">Junior Business Analyst → Web Catalog Specialist → Digital Marketing Specialist</h4>
+        <h6 class="card-subtitle mb-3 text-muted">Pet Supermarket Inc. · Oct 2015 – Jul 2023</h6>
           <ul class="mb-0">
-            <li>Describe your role and contributions.</li>
-            <li>Include any leadership or cross-functional responsibilities.</li>
-            <li>Talk about technologies or processes you’ve mastered.</li>
+            <li>Product owner for Syndigo Riversand PIM; onboarded 200+ vendors and maintained 14k+ SKUs; defined SQL logic for PIM→SFCC (MuleSoft/Azure).</li>
+            <li>Managed integrations with SFCC, Feedonomics, and Bazaarvoice; led Loyalty UX redesign and implemented AutoShip subscription program.</li>
+            <li>Executed QA/UAT and release validation; implemented promotions and ADA remediation; co-managed social content; improved email open rates by ~30% on a 1.5M list.</li>
+            <li>Project lead for website redesign and faceted search; supported cross-functional merchandising and marketing initiatives in a fast-paced environment.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education Section -->
+  <!-- Education -->
   <section id="education" class="py-5">
     <div class="container">
       <h2 class="mb-4">Education</h2>
       <div class="row">
         <div class="col-md-6 mb-4">
           <div class="p-4 border rounded-3 h-100">
-            <h5>Bachelor of Science in Field of Study</h5>
-            <p class="mb-1 text-muted">University Name</p>
-            <p class="mb-0">Graduated: Year</p>
+            <h5>Bachelor of Arts in Communication &amp; English</h5>
+            <p class="mb-1 text-muted">Florida Atlantic University, Boca Raton, FL</p>
+            <p class="mb-0">Graduated: —</p>
           </div>
         </div>
         <div class="col-md-6 mb-4">
           <div class="p-4 border rounded-3 h-100">
-            <h5>Master of Science in Field of Study</h5>
-            <p class="mb-1 text-muted">University Name</p>
-            <p class="mb-0">Graduated: Year</p>
+            <h5>Professional Certifications</h5>
+            <p class="mb-1 text-muted">PSPO I (2023), SEO Certified</p>
+            <p class="mb-0">Training: Agile/Scrum, Project Management</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <section id="skills" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4">Skills</h2>
@@ -119,55 +127,57 @@
         <div class="col-md-4 mb-4">
           <h5>Technical Skills</h5>
           <ul class="list-unstyled">
-            <li>Skill 1</li>
-            <li>Skill 2</li>
-            <li>Skill 3</li>
-            <li>Skill 4</li>
+            <li>Business Requirements, BRD/FSD, User Stories</li>
+            <li>Agile/Scrum facilitation (standups, refinement, planning)</li>
+            <li>System Integrations: Logicbroker, NetSuite, SFCC</li>
+            <li>Product Information Management: Syndigo Riversand</li>
+            <li>QA/UAT, Release Validation, Workflow Design</li>
+            <li>SQL (basics), ADA/SEO compliance</li>
           </ul>
         </div>
         <div class="col-md-4 mb-4">
           <h5>Soft Skills</h5>
           <ul class="list-unstyled">
-            <li>Communication</li>
-            <li>Leadership</li>
-            <li>Problem Solving</li>
-            <li>Teamwork</li>
+            <li>Stakeholder interviewing &amp; facilitation</li>
+            <li>Cross-functional collaboration</li>
+            <li>Mentoring junior analysts</li>
+            <li>Prioritization &amp; roadmap grooming</li>
           </ul>
         </div>
         <div class="col-md-4 mb-4">
           <h5>Tools &amp; Platforms</h5>
           <ul class="list-unstyled">
-            <li>Tool 1</li>
-            <li>Tool 2</li>
-            <li>Tool 3</li>
-            <li>Tool 4</li>
+            <li>Jira, Asana, Confluence, Visio</li>
+            <li>NetSuite, Logicbroker, SFCC</li>
+            <li>Feedonomics, Bazaarvoice</li>
+            <li>MuleSoft, Azure</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects" class="py-5">
     <div class="container">
       <h2 class="mb-4">Projects</h2>
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="images/project1.png" class="card-img-top" alt="Project image">
+            <img src="images/project1.png" class="card-img-top" alt="Project image" />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Project Name</h5>
-              <p class="card-text flex-grow-1">Brief description of a project you worked on, including technologies used and your role. Replace this with your own project details.</p>
-              <a href="#" class="btn btn-outline-primary mt-2">Learn More</a>
+              <h5 class="card-title">Custom Back-End Rebate System</h5>
+              <p class="card-text flex-grow-1">Led requirements, BRD/FSD, and Scrum delivery for a rebate management application used by merchandising and accounting. Coordinated Logicbroker + NetSuite integration for automated remittance; partnered with engineering for UAT and launch readiness.</p>
+              <a href="#contact" class="btn btn-outline-primary mt-2">Ask Me About This</a>
             </div>
           </div>
         </div>
-        <!-- Duplicate cards for additional projects as needed -->
+        <!-- Duplicate this card to add more projects while keeping layout identical -->
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4">Contact</h2>
@@ -177,10 +187,10 @@
           <form>
             <div class="row g-3">
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="text" class="form-control" placeholder="Your Name" required />
               </div>
               <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Your Email" required>
+                <input type="email" class="form-control" placeholder="Your Email" required />
               </div>
               <div class="col-12">
                 <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
@@ -198,11 +208,12 @@
   <!-- Footer -->
   <footer class="py-4 bg-dark text-white text-center">
     <div class="container">
-      <small>&copy; 2025 Your Name. All rights reserved.</small>
+      <small>&copy; 2025 Phillip Da Silva-Marquis. All rights reserved.</small>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
