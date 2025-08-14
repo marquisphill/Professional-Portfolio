@@ -385,12 +385,13 @@
   </details>
 </section>
 
-<!-- RECOMMENDATIONS (full-width container, collapsible) -->
-<section id="recommendations" class="container">
-  <details class="rec-details">
-    <summary class="rec-summary">
-      <span class="rec-title">Recommendations</span>
-      <span class="rec-hint">click to expand</span>
+<!-- RECOMMENDATIONS (collapsible, matches About Me width) -->
+<section id="recommendations" class="ab-module">
+  <details id="rec-details" class="ab-card">
+    <summary class="ab-header">
+      <h2 class="ab-title">Recommendations</h2>
+      <span class="ab-kicker">colleagues • leaders • partners</span>
+      <span class="ab-caret" aria-hidden="true"></span>
     </summary>
 
     <div class="rec-body">
@@ -401,12 +402,12 @@
           <a class="rec-link" href="https://www.linkedin.com/in/navin-anand/" target="_blank" rel="noopener">LinkedIn</a>
         </header>
         <p class="rec-meta">
-          <span class="rec-role">Chief Technology Officer — Navin worked with Phillip on the same team</span> ·
+          <span class="rec-role">Chief Technology Officer (worked with Phillip on the same team)</span> ·
           <span class="rec-company">FlexShopper Inc.</span> ·
           <time datetime="2025-08-09">August 9, 2025</time>
         </p>
         <p class="rec-blurb">
-          Phil was part of our PMO team, where he consistently demonstrated adaptability, and strategic thinking...
+          Phil was part of our PMO team, where he consistently demonstrated adaptability and strategic thinking. Starting within the Development PMO, Phil quickly pivoted to the Business PMO without missing a beat — bridging technical and business perspectives seamlessly. He effectively managed stakeholders across partners, SMEs, and engineering, facilitating prioritization and keeping the backlog ROI-aligned. His command of Jira, Confluence, and Asana made him a highly efficient PM/BA/PO. Logicbroker was a standout: he coordinated complex work, aligned cross-functional teams, and delivered results. I’d recommend Phil for any program or project management role.
         </p>
       </article>
 
@@ -416,104 +417,71 @@
           <a class="rec-link" href="https://www.linkedin.com/in/dennis-owcarz-7500a27/" target="_blank" rel="noopener">LinkedIn</a>
         </header>
         <p class="rec-meta">
-          <span class="rec-role">Chief Merchandising Officer — Dennis managed Phillip directly</span> ·
+          <span class="rec-role">Chief Merchandising Officer (managed Phillip directly)</span> ·
           <span class="rec-company">FlexShopper Inc.</span> ·
           <time datetime="2025-08-08">August 8, 2025</time>
         </p>
         <p class="rec-blurb">
-          Phillip reported to me for half a year at Flexshopper...
+          Phillip reported to me for half a year at FlexShopper. I would hire him again in a second. He leads by example across task management, cross-functional collaboration, attention to detail, deadlines, and a consistently positive attitude that lifts the team.
         </p>
       </article>
+      <!-- Duplicate <article class="rec-card">…</article> for more -->
     </div>
   </details>
 </section>
 
+<!-- Scoped styling: inherits width from .ab-module/.ab-card like About Me -->
 <style>
-  /* Make container match About Me section width */
-  #recommendations.container {
-    max-width: 1200px; /* adjust to match your site’s container size */
-    margin: 2rem auto;
-    padding: 0 2rem;   /* same side padding as other sections */
-  }
-  #recommendations .rec-details {
-    background: #141414;
-    color: #eaeaea;
+  /* Do NOT set max-width here; About Me width comes from your .ab-module/.ab-card CSS */
+  #recommendations .rec-body {
+    padding: 1.25rem;
+    background: #141414;       /* slightly lighter than black bg */
     border: 1px solid #262626;
-    border-radius: 14px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    overflow: hidden;
+    border-top: none;           /* ab-card border likely on summary */
+    border-radius: 0 0 14px 14px;
   }
-  #recommendations .rec-summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    padding: 1.1rem 1.25rem;
-    background: linear-gradient(180deg, #151515, #121212);
-    border-bottom: 1px solid #1f1f1f;
-    user-select: none;
-  }
-  #recommendations .rec-summary::-webkit-details-marker { display: none; }
-  #recommendations .rec-summary::before {
-    content: '';
-    width: .55rem; height: .55rem;
-    border-right: 2px solid #9aa0a6;
-    border-bottom: 2px solid #9aa0a6;
-    transform: rotate(-45deg);
-    transition: transform .2s ease;
-    margin-right: .25rem;
-  }
-  #recommendations details[open] .rec-summary::before { transform: rotate(45deg); }
-  #recommendations .rec-title { font-weight: 700; letter-spacing: .2px; }
-  #recommendations .rec-hint { margin-left: auto; font-size: .85rem; color: #9aa0a6; }
-  #recommendations .rec-body { padding: 1rem 1.25rem 1.25rem; }
+
   #recommendations .rec-card {
     background: #0f0f0f;
     border: 1px solid #222;
     border-radius: 12px;
     padding: 1rem 1rem 1.1rem;
     margin: 0 0 1rem 0;
+    color: #eaeaea;
   }
+
   #recommendations .rec-head {
     display: flex;
     align-items: center;
     gap: .75rem;
     margin-bottom: .35rem;
   }
-  #recommendations .rec-name { margin: 0; font-size: 1.05rem; color: #ffffff; }
-  #recommendations .rec-link {
-    margin-left: auto;
-    font-size: .92rem;
-    color: #4da3ff;
-    text-decoration: none;
-  }
+
+  #recommendations .rec-name { margin: 0; font-size: 1.05rem; color: #fff; }
+  #recommendations .rec-link { margin-left: auto; font-size: .92rem; color: #4da3ff; text-decoration: none; }
   #recommendations .rec-link:hover { text-decoration: underline; }
+
   #recommendations .rec-meta { margin: 0; font-size: .9rem; color: #b5bac1; }
   #recommendations .rec-blurb { margin: .6rem 0 0; color: #dddddd; line-height: 1.55; }
+
   @media (prefers-reduced-motion: no-preference) {
     #recommendations .rec-card { transition: transform .12s ease; }
     #recommendations .rec-card:hover { transform: translateY(-1px); }
   }
 </style>
 
+<!-- Optional: open the section when a link points to #recommendations -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const details = document.querySelector('#recommendations .rec-details');
-    if (details) details.open = false;
-    document.querySelectorAll('a[href="#recommendations"]').forEach((a) => {
-      a.addEventListener('click', function () {
-        if (details) {
-          setTimeout(() => {
-            details.open = true;
-            details.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 0);
-        }
+  document.addEventListener('DOMContentLoaded', () => {
+    const details = document.getElementById('rec-details');
+    if (details) details.open = false; // keep closed on load
+    document.querySelectorAll('a[href="#recommendations"]').forEach(a => {
+      a.addEventListener('click', () => {
+        setTimeout(() => { if (details) details.open = true; }, 0);
       });
     });
   });
 </script>
-
 
 
 
