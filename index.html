@@ -66,6 +66,7 @@
           <a href="#experience">Experience</a>
           <a href="#form">Contact Me</a>
           <a href="#about-me">Bio</a>
+          <a href="#recommendations">Recommendations</a>
         </div>
       </nav>
       <button id="burger" class="btn ghost" aria-label="Menu">☰</button>
@@ -384,46 +385,170 @@
   </details>
 </section>
 
-<!-- RECOMMENDATIONS -->
-    
-    <section id="recommendations" style="display:none;">
-  <h2>Recommendations</h2>
+<!-- RECOMMENDATIONS (self-contained, collapsible, dark-card theme) -->
+<section id="recommendations">
+  <details class="rec-details">
+    <summary class="rec-summary">
+      <span class="rec-title">Recommendations</span>
+      <span class="rec-hint">click to expand</span>
+    </summary>
 
-  <div class="recommendation">
-    <div class="rec-header">
-      <h3>Jane Doe</h3>
-    </div>
-    <div class="rec-meta">
-      <span><strong>Title:</strong> Senior Project Manager</span> • 
-      <span><strong>Company:</strong> Acme Corp</span> • 
-      <span><strong>Date:</strong> January 15, 2025</span> • 
-      <a href="https://www.linkedin.com/in/janedoe" target="_blank">LinkedIn</a>
-    </div>
-    <div class="rec-blurb">
-      Phill’s ability to bridge technical solutions with business goals is unmatched. 
-      He consistently brought clarity to complex projects and ensured all stakeholders 
-      were aligned from start to finish.
-    </div>
-  </div>
+    <div class="rec-body">
+      <!-- Recommendation block -->
+      <article class="rec-card">
+        <header class="rec-head">
+          <h3 class="rec-name">Jane Doe</h3>
+          <a class="rec-link" href="https://www.linkedin.com/in/janedoe" target="_blank" rel="noopener">LinkedIn</a>
+        </header>
+        <p class="rec-meta">
+          <span class="rec-role">Senior Project Manager</span> ·
+          <span class="rec-company">Acme Corp</span> ·
+          <time datetime="2025-01-15">Jan 15, 2025</time>
+        </p>
+        <p class="rec-blurb">
+          Phill brings clarity to complex projects and builds alignment across teams.
+          His blend of technical depth and people-first communication consistently
+          moves work forward.
+        </p>
+      </article>
 
-  <div class="recommendation">
-    <div class="rec-header">
-      <h3>John Smith</h3>
+      <article class="rec-card">
+        <header class="rec-head">
+          <h3 class="rec-name">John Smith</h3>
+          <a class="rec-link" href="https://www.linkedin.com/in/johnsmith" target="_blank" rel="noopener">LinkedIn</a>
+        </header>
+        <p class="rec-meta">
+          <span class="rec-role">Director of Product</span> ·
+          <span class="rec-company">Tech Innovations</span> ·
+          <time datetime="2024-12-20">Dec 20, 2024</time>
+        </p>
+        <p class="rec-blurb">
+          Working with Phill was a game changer. He connects business goals with
+          engineering realities and ships solutions that matter.
+        </p>
+      </article>
+      <!-- Duplicate <article class="rec-card">…</article> for more -->
     </div>
-    <div class="rec-meta">
-      <span><strong>Title:</strong> Director of Product</span> • 
-      <span><strong>Company:</strong> Tech Innovations</span> • 
-      <span><strong>Date:</strong> December 20, 2024</span> • 
-      <a href="https://www.linkedin.com/in/johnsmith" target="_blank">LinkedIn</a>
-    </div>
-    <div class="rec-blurb">
-      Working with Phill was a game-changer for our team. His attention to detail, 
-      problem-solving mindset, and ability to communicate across technical and 
-      non-technical teams made every project a success.
-    </div>
-  </div>
-
+  </details>
 </section>
+
+<style>
+  /* Scoped to #recommendations to avoid bleeding into your theme */
+  #recommendations {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  #recommendations .rec-details {
+    background: #141414;            /* slightly lighter than a black bg */
+    color: #eaeaea;
+    border: 1px solid #262626;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    overflow: hidden;
+  }
+  #recommendations .rec-summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1.1rem 1.25rem;
+    background: linear-gradient(180deg, #151515, #121212);
+    border-bottom: 1px solid #1f1f1f;
+    user-select: none;
+  }
+  #recommendations .rec-summary::-webkit-details-marker { display: none; }
+  #recommendations .rec-summary::before {
+    content: '';
+    width: .55rem; height: .55rem;
+    border-right: 2px solid #9aa0a6;
+    border-bottom: 2px solid #9aa0a6;
+    transform: rotate(-45deg);
+    transition: transform .2s ease;
+    margin-right: .25rem;
+  }
+  #recommendations details[open] .rec-summary::before { transform: rotate(45deg); }
+
+  #recommendations .rec-title {
+    font-weight: 700;
+    letter-spacing: .2px;
+  }
+  #recommendations .rec-hint {
+    margin-left: auto;
+    font-size: .85rem;
+    color: #9aa0a6;
+  }
+
+  #recommendations .rec-body {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+  #recommendations .rec-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 1rem 1rem 1.1rem;
+    margin: 0 0 1rem 0;
+  }
+  #recommendations .rec-head {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .35rem;
+  }
+  #recommendations .rec-name {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #ffffff;
+  }
+  #recommendations .rec-link {
+    margin-left: auto;
+    font-size: .92rem;
+    color: #4da3ff;
+    text-decoration: none;
+  }
+  #recommendations .rec-link:hover { text-decoration: underline; }
+
+  #recommendations .rec-meta {
+    margin: 0;
+    font-size: .9rem;
+    color: #b5bac1;
+  }
+  #recommendations .rec-blurb {
+    margin: .6rem 0 0;
+    color: #dddddd;
+    line-height: 1.55;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: no-preference) {
+    #recommendations .rec-card { transition: transform .12s ease; }
+    #recommendations .rec-card:hover { transform: translateY(-1px); }
+  }
+</style>
+
+<script>
+  // Keep closed on load, open only when clicking an anchor with href="#recommendations"
+  document.addEventListener('DOMContentLoaded', function () {
+    const details = document.querySelector('#recommendations .rec-details');
+    if (details) details.open = false; // ensure closed even if URL has #recommendations
+
+    // Any link on the page pointing to #recommendations will open it
+    document.querySelectorAll('a[href="#recommendations"]').forEach((a) => {
+      a.addEventListener('click', function () {
+        if (details) {
+          // let the browser jump to the anchor first
+          setTimeout(() => {
+            details.open = true;
+            // Optional: smooth-align the opened content
+            details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 0);
+        }
+      });
+    });
+  });
+</script>
+
 
 
 <!-- SCOPED STYLES (keep with this section or move to your CSS file) -->
