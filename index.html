@@ -75,58 +75,63 @@
 
   <main class="wrap">
     <!-- HERO -->
-    <section class="hero">
-     <div class="profile-card">
-  <!-- Full-height left image -->
-  <div class="profile-img">
-    <img src="headshot.png" alt="Headshot">
-  </div>
+   <section class="hero" style="width:100%;margin:0 auto;">
+  <div class="profile-card">
+    <!-- Full-width image on desktop / stacked on mobile -->
+    <div class="profile-img">
+      <img src="headshot.png" alt="Headshot">
+    </div>
 
-  <!-- Content -->
-  <div class="profile-content">
-    <div>
-      <h1>Business Systems Analyst | Integrations · Solutions · Results</h1>
-      <p class="meta">Systems integrations · Process optimization · Cross-team delivery (Agile/Scrum)</p>
+    <!-- Content -->
+    <div class="profile-content">
+      <div>
+        <h1>Business Systems Analyst | Integrations · Solutions · Results</h1>
+        <p class="meta">Systems integrations · Process optimization · Cross-team delivery (Agile/Scrum)</p>
 
-      <!-- Expandable Bio -->
-      <div class="bio-box">
-        <p id="shortText">I transform complex business requirements into scalable, measurable solutions...</p>
-        <div id="fullText" class="collapsed">
-          <p>I specialize in e-commerce and fintech, transforming complex requirements into scalable,
-             measurable solutions. I lead cross-functional workshops to align stakeholders, translate
-             business needs into clear, actionable requirements, and develop process models that drive
-             engagement and clarity.</p>
-          <p>I manage deliverables across multi-team initiatives, ensuring alignment,
-             removing blockers, and supporting team members to achieve project objectives.
-             Explore my case studies to see how I help organizations grow and innovate.</p>
+        <!-- Expandable Bio -->
+        <div class="bio-box">
+          <p id="shortText">I transform complex business requirements into scalable, measurable solutions...</p>
+          <div id="fullText" class="collapsed">
+            <p>I specialize in e-commerce and fintech, transforming complex requirements into scalable,
+               measurable solutions. I lead cross-functional workshops to align stakeholders, translate
+               business needs into clear, actionable requirements, and develop process models that drive
+               engagement and clarity.</p>
+            <p>I manage deliverables across multi-team initiatives, ensuring alignment,
+               removing blockers, and supporting team members to achieve project objectives.
+               Explore my case studies to see how I help organizations grow and innovate.</p>
+          </div>
+          <button id="toggleBtn" class="toggle-btn">Read More</button>
         </div>
-        <button id="toggleBtn" class="toggle-btn">Read More</button>
+      </div>
+
+      <!-- Buttons -->
+      <div class="profile-links">
+        <a href="https://marquisphill.github.io/Professional-Portfolio/Phillip_DaSilva-Marquis_Resume_2025_Web.pdf"
+           target="_blank" rel="noopener" class="btn-main">View Resume</a>
+        <a href="#cases" class="btn-alt">View Case Studies</a>
+        <a href="#experience" class="btn-alt">View Experience</a>
       </div>
     </div>
-
-    <!-- Buttons -->
-    <div class="profile-links">
-      <a href="https://marquisphill.github.io/Professional-Portfolio/Phillip_DaSilva-Marquis_Resume_2025_Web.pdf"
-         target="_blank" rel="noopener" class="btn-main">View Resume</a>
-      <a href="#cases" class="btn-alt">View Case Studies</a>
-      <a href="#experience" class="btn-alt">View Experience</a>
-    </div>
   </div>
-</div>
+</section>
 
 <style>
-/* Layout */
+/* Hero card should take full width */
+.hero {
+  padding: 0;
+}
 .profile-card {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 0; /* flush edges for full width */
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(0,0,0,.35);
 }
 
-/* Image styles */
+/* Image */
 .profile-img {
   flex: 1;
   min-width: 100%;
@@ -142,21 +147,21 @@
 .profile-content {
   flex: 2;
   min-width: 100%;
-  padding: 24px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Desktop layout */
+/* Desktop side-by-side layout */
 @media (min-width: 768px) {
   .profile-card { flex-wrap: nowrap; }
-  .profile-img { max-width: 33%; min-width: auto; }
+  .profile-img { max-width: 40%; min-width: auto; }
   .profile-img img { height: 100%; }
   .profile-content { min-width: auto; }
 }
 
-/* Mobile tweak: fixed image height */
+/* Mobile: image on top with fixed height */
 @media (max-width: 767px) {
   .profile-img img { height: 250px; object-fit: cover; }
 }
