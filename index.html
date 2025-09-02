@@ -4,59 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Phill Marquis — Business Systems Analyst Portfolio</title>
-  <meta name="description" content="Business Systems Analyst specializing in systems integrations, process optimization, and cross-team delivery (Agile/Scrum). Portfolio, case studies, blog, and contact." />
-  <style>
-    :root{
-      --bg:#0b0f1a; --panel:#121826; --ink:#e6ecff; --muted:#9bb0ff;
-      --accent:#7aa2ff; --accent-2:#b6c6ff; --line:#1d2536; --ok:#89ffa1;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:linear-gradient(180deg,var(--bg),#0d1220 30%,#0a0f1a)}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    header{position:sticky;top:0;z-index:1000;background:rgba(9,13,24,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-    .brand{font-weight:700;letter-spacing:.3px}
-    .menu a{margin-left:18px}
-    .wrap{max-width:1100px;margin:0 auto;padding:56px 20px}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-    .pill{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);margin-right:8px;margin-bottom:8px}
-    h1,h2,h3{line-height:1.15;margin:0 0 12px}
-    h1{font-size:2rem} h2{font-size:1.6rem;margin-top:6px} h3{font-size:1.1rem}
-    .cta{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--accent);color:#0b1220;background:var(--accent);font-weight:600}
-    .btn.ghost{background:transparent;color:var(--accent);border-color:var(--line)}
-    .grid{display:grid;gap:18px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    .meta{color:var(--muted);font-size:.94rem}
-    .list{margin:10px 0 0 18px}
-    .foot{color:#8ea0e6;font-size:.9rem}
-    .tagset{margin-top:8px}
-    .tag{display:inline-block;border:1px solid var(--line);border-radius:7px;padding:4px 8px;margin:4px 6px 0 0;color:var(--accent-2);font-size:.9rem}
-    .ks{border-left:3px solid var(--accent);padding-left:12px}
-    .badge{color:#07121f;background:var(--ok);border-radius:7px;padding:2px 8px;font-weight:700;letter-spacing:.3px;margin-left:8px}
-    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-    .section-title .line{flex:1;height:1px;background:var(--line)}
-    form input, form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0d1424;color:var(--ink)}
-    form textarea{min-height:120px}
-    form button{margin-top:8px}
-    footer{border-top:1px solid var(--line);margin-top:40px}
-    .note{font-size:.9rem;color:#9fb1ff}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-    @media (max-width:720px){.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
-  </style>
-  <script>
-    // mobile nav toggle + close on link
-    document.addEventListener('DOMContentLoaded', () => {
-      const burger = document.getElementById('burger');
-      const menu = document.getElementById('menu');
-      burger.addEventListener('click', () => menu.hidden = !menu.hidden);
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.hidden = true));
-    });
-  </script>
+  <meta name="description" content="Business Systems Analyst specializing in integrations, process optimization, and cross-team delivery (Agile/Scrum). Portfolio, case studies, experience, recommendations, and contact." />
+  <!-- Keep your existing CSS file/path -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- =========================
+       Header / Nav
+  ========================== -->
   <header>
     <div class="nav">
       <div class="brand">Phill Marquis · BSA</div>
@@ -64,667 +19,438 @@
         <div class="menu" id="menu">
           <a href="#cases">Case Studies</a>
           <a href="#experience">Experience</a>
-          <a href="#about-me">Bio</a>
           <a href="#recommendations">Recommendations</a>
-          <a href="#form">Contact Me</a>
+          <a href="#form">Contact</a>
         </div>
       </nav>
-      <button id="burger" class="btn ghost" aria-label="Menu">☰</button>
+      <button id="burger" class="btn ghost" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="card">
-        <h1>Business Systems Analyst | Integrations · Solutions · Results</h1>
-        <p class="meta">Systems integrations · Process optimization · Cross-team delivery (Agile/Scrum)</p>
-        <p>I specialize in e-commerce and fintech, transforming complex requirements into scalable, measurable solutions. I lead cross-functional workshops to align stakeholders, translate business needs into clear, actionable functional requirements, and develop detailed process models that drive stakeholder engagement and clarity. I manage deliverables across multi-team initiatives, ensuring alignment, removing blockers, and supporting team members to achieve project objectives. Explore my case studies to see how I help organizations grow and innovate.</p>
-        <div class="cta">
-         <a href="https://marquisphill.github.io/Professional-Portfolio/Phillip_DaSilva-Marquis_Resume_2025_Web.pdf" 
-       class="btn btn-ghost" 
-       target="_blank" 
-       rel="noopener">
-          <i class="bi bi-file-earmark-arrow-down"></i> View Resume
-        </a>
-          <a class="btn ghost" href="#cases">View Case Studies</a>
-          <a class="btn ghost" href="#experience">View Experience</a>
-        </div>
-        <div class="tagset">
-<span class="tag">Agile/Scrum</span><span class="tag">Communication</span>
-<span class="tag">Writing User Stories</span>
-<span class="tag">Collaborative Leadership</span>
-<span class="tag">Strategic Thinking</span>
-<span class="tag">Problem-Solving</span>
-<span class="tag">Process-modeling</span>
-<span class="tag">Backlog Refinement</span>
-<span class="tag">Requirement Elicitation</span>
-<span class="tag">BA/PM Hybrid</span>
-<span class="tag">API</span>
-<span class="tag">E-Commerce</span>
-<span class="tag">FinTech</span>
-<span class="tag">JIRA</span>
-<span class="tag">Visio</span>
-<span class="tag">Automation</span>
-        </div>
-      </div>
-      <div class="card">
-        <h2>What I’m Best At</h2>
-        <ul class="list">
-          <li>Turning messy cross-system requirements into clear, testable designs (BRD/FSD, user stories, acceptance criteria).</li>
-          <li>Leading cross-functional workshops to drive stakeholder alignment</li>
-          <li>Coaching teams through backlog refinement, sprint planning, and UAT.</li>
-        </ul>
-        <p class="note">Certs: PSPO I (Udemy - 2023) · PSM I (Scrum.org - <em>coming soon</em>).</p>
-      </div>
-    </section>
+<!-- =========================
+     Hero (no image, clean layout, consistent width)
+========================== -->
+<section class="hero journey-hero wrap">
+  <div class="card hero-intro">
+    <h1>Business Systems Analyst | Integrations · Solutions · Results</h1>
 
-    <!-- CASE STUDIES -->
-    <section id="cases" class="wrap">
-      <div class="section-title"><h2>Case Studies</h2><div class="line"></div></div>
-      <div class="grid cols-3">
-        <!-- Case 1 -->
-        <article class="card">
-          <h3>Logicbroker ⇄ FlexShopper Custom Order/Lease & Accounting Systems</h3>
+    <p class="meta">
+      Business Systems Analyst with a record of leading complex integrations, streamlining vendor onboarding,
+      and optimizing workflows across merchandising, accounting, and operations. Skilled at translating business needs
+      into scalable technical solutions that cut costs, accelerate delivery, and open new revenue opportunities.
+      I thrive at the intersection of strategy, process, and technology—driving measurable results that make teams more
+      efficient and businesses more competitive.
+    </p>
+
+    <!-- Resume CTAs -->
+    <div class="cta" style="margin-top:12px;">
+      <a id="viewResumeLink"
+         href="https://marquisphill.github.io/Professional-Portfolio/Phillip_DaSilva-Marquis_Resume_2025_Web.pdf"
+         class="btn ghost"
+         target="_blank"
+         rel="noopener">
+        📄 View Resume
+      </a>
+
+      <button id="downloadResumeBtn" class="btn" type="button" style="margin-left:8px;">
+        ⬇️ Download Resume
+      </button>
+    </div>
+
+    <noscript>
+      <p style="margin-top:10px;">
+        JavaScript is disabled. You can still 
+        <a href="https://marquisphill.github.io/Professional-Portfolio/Phillip_DaSilva-Marquis_Resume_2025_Web.pdf" 
+           target="_blank" 
+           rel="noopener">open the resume</a>.
+      </p>
+    </noscript>
+  </div>
+</section>
+
+
+
+
+<!-- =========================
+     Case Studies
+========================== -->
+<section id="cases" class="wrap big-section case-section">
+  <div class="section-header collapsed">
+    <h2>Case Studies</h2>
+    <span class="hint">Expand</span>
+  </div>
+
+  <div class="section-body case-studies">
+    <!-- Case 1 -->
+    <article class="card case">
+      <div class="case-header">
+        <div>
+          <h3>Faster Vendor Onboarding & Automated Invoicing</h3>
           <p class="meta">BA/PM · Integration · EDI & APIs</p>
-          <p class="ks">Led integration of Logicbroker with FlexShopper’s custom order/lease management systems and accounting databases (GCP & NetSuite). Delivered multi-vendor onboarding flows, custom architecture for non-standard vendors, and special invoice handling requirements. Produced BRD with system architecture diagram (Visio) and SOPs in Confluence for merchandising, accounting, and operations.</p>
-          <ul class="list">
-            <li><strong>Impact:</strong> Cut vendor onboarding time by 50%, doubling capacity; reduced manual touches in accounting reconciliation.</li>
-            <li><strong>Stack:</strong> Logicbroker (Azure, API-driven), NetSuite, GCP, EDI transactions, dashboards.</li>
-            <li><strong>Artifacts:</strong> BRD, Visio system architecture, Confluence SOPs, Go-live Checklist.</li>
-            <li><strong>Complexity:</strong> Supported vendors unable to onboard to Logicbroker; implemented custom invoice processing logic.</li>
-          </ul>
-          <div class="tagset">
-            <span class="tag">Logicbroker</span><span class="tag">NetSuite</span><span class="tag">GCP</span><span class="tag">Dropship</span>
-          </div>
-        </article>
-
-        <!-- Case 2 -->
-        <article class="card">
-          <h3>Custom Back-End Rebate System (UI + Logic)</h3>
-          <p class="meta">BA · Product Design · Workshops & Requirements</p>
-          <p class="ks">Led BA efforts to design a custom rebate management application with a UI for the merchandising team. Facilitated cross-functional workshops with developers, designers, and merch to define use cases and required functionality. Addressed complex needs such as UI criteria setup for rebates, change control, SKU validation, and developer-facing error logging. Delivered user stories for all possible UI actions and example rebate criteria for both UI and back-end logic.</p>
-          <ul class="list">
-            <li><strong>Impact:</strong> Reduces rebate setup time for merchandising staff by streamlining UI workflows and automating validation, enabling faster promotions and fewer manual touchpoints.</li>
-            <li><strong>Artifacts:</strong> User stories, rebate criteria documentation, functional specifications.</li>
-            <li><strong>Complexity:</strong> Balancing merch UI needs with full-system functionality beyond rebate generation.</li>
-          </ul>
-          <div class="tagset">
-            <span class="tag">Custom Application</span><span class="tag">User Stories</span><span class="tag">Merchandising</span>
-          </div>
-        </article>
-
-        <!-- Case 3 -->
-        <article class="card">
-          <h3>Catalog-as-a-Service (CaaS) + Revenue Share Process</h3>
-          <p class="meta">BA/PM · Integration · Accounting & Partner Systems</p>
-          <p class="ks">Led BA and PM efforts to enable FlexShopper to stream product catalogs to merchant partner websites via a new back-end revenue share model. Gathered and defined requirements leveraging expertise in accounting workflows and custom CaaS applications. Coordinated with third-party financial waterfall partners to integrate lender data for automated invoicing.</p>
-          <ul class="list">
-            <li><strong>Impact:</strong> Opened a new recurring revenue channel by enabling automated product catalog syndication to partner merchant sites under a revenue-share model.</li>
-            <li><strong>Complexity:</strong> Designed revenue share process to handle all return scenarios per vendor policy, payment method, and profitability tied to lease origination date.</li>
-            <li><strong>Artifacts:</strong> Detailed Visio diagram mapping every revenue share scenario, systems, and processes — served as the source of truth for the Master Service Agreement (co-authored with partner).</li>
-          </ul>
-          <div class="tagset">
-            <span class="tag">CaaS</span><span class="tag">Revenue Share</span><span class="tag">Accounting Systems</span><span class="tag">Partner Integration</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-
-<!-- EXPERIENCE (collapsible, self-contained styles) -->
-<section id="experience" class="xp-module">
-  <details id="xp-details" class="xp-card">
-    <summary class="xp-header">
-      <h2 class="xp-title">Experience</h2>
-      <span class="xp-kicker">Expand to view roles &amp; outcomes</span>
-      <span class="xp-caret" aria-hidden="true"></span>
-    </summary>
-
-    <div class="xp-roles">
-
-      <!-- FlexShopper — Project Manager, Merchandising -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Project Manager, Merchandising</h3>
-            <div class="xp-company">FlexShopper Inc. · Boca Raton, FL</div>
-          </div>
-          <div class="xp-dates">Mar 2025 – Aug 2025</div>
         </div>
-        <p class="xp-text">
+        <button class="btn ghost read-more">Read More</button>
+      </div>
+      <div class="case-body">
+        <p class="ks">
+          Led integration of Logicbroker with FlexShopper’s custom order/lease management systems and accounting databases (GCP & NetSuite).
+          Delivered multi-vendor onboarding flows, custom architecture for non-standard vendors, and special invoice handling requirements.
+          Produced BRD with system architecture diagram (Visio) and SOPs in Confluence for merchandising, accounting, and operations.
+        </p>
+        <ul class="list">
+          <li><strong>Impact:</strong> Cut vendor onboarding time by 50%, doubling capacity; reduced manual touches in accounting reconciliation.</li>
+          <li><strong>Stack:</strong> Logicbroker (Azure, API-driven), NetSuite, GCP, EDI transactions, dashboards.</li>
+          <li><strong>Artifacts:</strong> BRD, Visio system architecture, Confluence SOPs, Go-live Checklist.</li>
+          <li><strong>Complexity:</strong> Supported vendors unable to onboard to Logicbroker; implemented custom invoice processing logic.</li>
+        </ul>
+        <div class="tagset">
+          <span class="tag">Logicbroker</span><span class="tag">NetSuite</span><span class="tag">GCP</span><span class="tag">Dropship</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case 2 -->
+    <article class="card case">
+      <div class="case-header">
+        <div>
+          <h3>Rebate Management App to Streamline Promotions</h3>
+          <p class="meta">BA · Product Design · Workshops & Requirements</p>
+        </div>
+        <button class="btn ghost read-more">Read More</button>
+      </div>
+      <div class="case-body">
+        <p class="ks">
+          Led BA efforts to design a custom rebate management application with a UI for the merchandising team.
+          Facilitated cross-functional workshops with developers, designers, and merch to define use cases and required functionality.
+          Addressed complex needs such as UI criteria setup for rebates, change control, SKU validation, and developer-facing error logging.
+          Delivered user stories for all possible UI actions and example rebate criteria for both UI and back-end logic.
+        </p>
+        <ul class="list">
+          <li><strong>Impact:</strong> Reduces rebate setup time for merchandising staff by streamlining UI workflows and automating validation, enabling faster promotions and fewer manual touchpoints.</li>
+          <li><strong>Artifacts:</strong> User stories, rebate criteria documentation, functional specifications.</li>
+          <li><strong>Complexity:</strong> Balancing merch UI needs with full-system functionality beyond rebate generation.</li>
+        </ul>
+        <div class="tagset">
+          <span class="tag">Custom Application</span><span class="tag">User Stories</span><span class="tag">Merchandising</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case 3 -->
+    <article class="card case">
+      <div class="case-header">
+        <div>
+          <h3>New Revenue Channel via Catalog-as-a-Service</h3>
+          <p class="meta">BA/PM · Integration · Accounting & Partner Systems</p>
+        </div>
+        <button class="btn ghost read-more">Read More</button>
+      </div>
+      <div class="case-body">
+        <p class="ks">
+          Led BA and PM efforts to enable FlexShopper to stream product catalogs to merchant partner websites via a new back-end revenue share model.
+          Gathered and defined requirements leveraging expertise in accounting workflows and custom CaaS applications.
+          Coordinated with third-party financial waterfall partners to integrate lender data for automated invoicing.
+        </p>
+        <ul class="list">
+          <li><strong>Impact:</strong> Opened a new recurring revenue channel by enabling automated product catalog syndication to partner merchant sites under a revenue-share model.</li>
+          <li><strong>Complexity:</strong> Designed revenue share process to handle all return scenarios per vendor policy, payment method, and profitability tied to lease origination date.</li>
+          <li><strong>Artifacts:</strong> Detailed Visio diagram mapping every revenue share scenario, systems, and processes — served as the source of truth for the Master Service Agreement (co-authored with partner).</li>
+        </ul>
+        <div class="tagset">
+          <span class="tag">CaaS</span><span class="tag">Revenue Share</span><span class="tag">Accounting Systems</span><span class="tag">Partner Integration</span>
+        </div>
+      </div>
+    </article>
+
+ 
+  </div>
+</section>
+
+
+<!-- =========================
+     Experience
+========================== -->
+<section id="experience" class="wrap big-section xp-section">
+  <div class="section-header collapsed">
+    <h2>Experience</h2>
+    <span class="hint">Expand</span>
+  </div>
+
+  <div class="section-body xp-content">
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>FlexShopper · Project Manager, Merchandising</h3>
+        <p class="meta">Mar 2025 – Aug 2025</p>
+        <p>
           Led projects and requirements across merchandising initiatives; launched category microsites with finance waterfall,
           streamlining merchant onboarding and driving new revenue activation.
         </p>
-      </article>
+      </div>
 
-      <!-- FlexShopper — Business Systems Analyst / PMO Analyst -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Business Systems Analyst / PMO Analyst</h3>
-            <div class="xp-company">FlexShopper Inc. · Boca Raton, FL</div>
-          </div>
-          <div class="xp-dates">Nov 2023 – Mar 2025</div>
-        </div>
-        <p class="xp-text">
+      <div class="timeline-item">
+        <h3>FlexShopper · Business Systems Analyst / PMO Analyst</h3>
+        <p class="meta">Nov 2023 – Mar 2025</p>
+        <p>
           Drove Agile delivery and authored BRDs/FSDs; integrated Logicbroker with NetSuite to automate remittance,
           onboard 35+ vendors, cut onboarding SLAs by 50%, and standardize the invoice process.
         </p>
-      </article>
+      </div>
 
-      <!-- Pet Supermarket — Junior Business Analyst -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Junior Business Analyst</h3>
-            <div class="xp-company">Pet Supermarket Inc. · Sunrise, FL</div>
-          </div>
-          <div class="xp-dates">Jan 2021 – Jul 2023</div>
-        </div>
-        <p class="xp-text">
-          Acted as PIM product owner; onboarded 200+ vendors and scaled data ops for 14K+ SKUs while coordinating SFCC integrations and QA for reliable releases.
-        </p>
-      </article>
-
-      <!-- Pet Supermarket — Web Catalog Specialist -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Web Catalog Specialist</h3>
-            <div class="xp-company">Pet Supermarket Inc. · Sunrise, FL</div>
-          </div>
-          <div class="xp-dates">Aug 2018 – Jan 2021</div>
-        </div>
-        <p class="xp-text">
-          Implemented the company’s first PIM and maintained 14K products; published 150+ new web items weekly and drove promo execution to support ecommerce growth.
-        </p>
-      </article>
-
-      <!-- Pet Supermarket — Digital Marketing Specialist -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Digital Marketing Specialist</h3>
-            <div class="xp-company">Pet Supermarket Inc. · Sunrise, FL</div>
-          </div>
-          <div class="xp-dates">Oct 2015 – Aug 2018</div>
-        </div>
-        <p class="xp-text">
-          Onboarded Oracle Responsys and managed a 1.5M list; warmed up the IP and lifted email open rate 30%, increasing site traffic by 17% through data-driven campaigns.
-        </p>
-      </article>
-
-      <!-- Pet Supermarket — Ecommerce Specialist -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Ecommerce Specialist</h3>
-            <div class="xp-company">Pet Supermarket Inc. · Sunrise, FL</div>
-          </div>
-          <div class="xp-dates">Jul 2015 – Aug 2015</div>
-        </div>
-        <p class="xp-text">
-          Supported store migration and site redesign; managed Amazon Seller ops and introduced faceted search to improve product discovery.
-        </p>
-      </article>
-
-      <!-- Pet Supermarket — Sales Associate -->
-      <article class="xp-role">
-        <div class="xp-meta">
-          <div class="xp-meta-left">
-            <h3 class="xp-role-title">Sales Associate</h3>
-            <div class="xp-company">Pet Supermarket Inc. · Sunrise, FL</div>
-          </div>
-          <div class="xp-dates">Jul 2013 – Apr 2015</div>
-        </div>
-        <p class="xp-text">
-          Delivered high-touch customer service and achieved sales goals through product expertise and relationship building.
-        </p>
-      </article>
-
-    </div>
-  </details>
-</section>
-
-<style>
-  /* dark palette tuned to your theme */
-  :root{
-    --xp-bg: #0a0c12;             /* page background (darker) */
-    --xp-card: #111318;           /* card background (slightly lighter) */
-    --xp-text: #e7e9ee;
-    --xp-muted: #9aa2b1;
-    --xp-border: rgba(255,255,255,.08);
-    --xp-shadow: 0 10px 28px rgba(0,0,0,.35);
-    --xp-radius: 16px;
-  }
-
-  /* spacing around section */
-  .xp-module{ margin: 2rem 0; }
-
-  /* card that fully encapsulates Experience */
-  .xp-card{
-    background: var(--xp-card);
-    color: var(--xp-text);
-    border: 1px solid var(--xp-border);
-    border-radius: var(--xp-radius);
-    box-shadow: var(--xp-shadow);
-    padding: clamp(1rem, 2.5vw, 1.75rem);
-    overflow: hidden;            /* keeps header content inside the box */
-  }
-
-  /* remove native marker and make header the toggle */
-  .xp-header{ 
-    list-style: none; 
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 1fr auto 1.5rem; /* title | kicker | caret */
-    align-items: center;
-    gap: .75rem;
-    border-bottom: 1px dashed var(--xp-border);
-    padding-bottom: .75rem;
-    margin-bottom: 1rem;
-  }
-  .xp-card > summary::-webkit-details-marker{ display:none; } /* hide default arrow */
-  .xp-title{ margin:0; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); }
-  .xp-kicker{ color: var(--xp-muted); font-size: .95rem; white-space: nowrap; }
-  .xp-caret{
-    width: 1rem; height: 1rem;
-    justify-self: end;
-    border-right: 2px solid rgba(231,233,238,.85);
-    border-bottom: 2px solid rgba(231,233,238,.85);
-    transform: rotate(45deg); /* ▼ look */
-    transition: transform .18s ease;
-  }
-  /* rotate caret when open */
-  details[open] .xp-caret{ transform: rotate(-135deg); } /* ▲ */
-
-  /* roles layout */
-  .xp-roles{ display: grid; gap: 1rem; }
-  .xp-role{ padding: .25rem 0; }
-
-  /* meta row keeps content inside and wraps neatly on small screens */
-  .xp-meta{
-    display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem; flex-wrap:wrap;
-  }
-  .xp-role-title{ margin:0 0 .15rem 0; font-size: 1rem; }
-  .xp-company{ color: var(--xp-muted); font-size: .95rem; }
-  .xp-dates{ color: var(--xp-muted); font-size: .9rem; white-space: nowrap; }
-
-  .xp-text{ margin:.5rem 0 0 0; line-height: 1.55; }
-</style>
-
-<!-- ABOUT ME (collapsible, image left / text right) -->
-<section id="about-me" class="ab-module">
-  <details id="about-details" class="ab-card">
-    <summary class="ab-header">
-      <h2 class="ab-title">About me (when I’m not working)</h2>
-      <span class="ab-kicker">music • stories • hot yoga</span>
-      <span class="ab-caret" aria-hidden="true"></span>
-    </summary>
-
-    <div class="ab-grid">
-      <!-- Image (left) -->
-      <figure class="ab-media">
-        <!-- Replace the src with your image path -->
-        <img src="https://marquisphill.github.io/Professional-Portfolio/about_me_square_2.jpg" alt="Phill staring off into the lush green Colombian jungle, thinking about his next project" loading="lazy">
-      </figure>
-
-      <!-- Text (right) -->
-      <div class="ab-body">
+      <div class="timeline-item">
+        <h3>Pet Supermarket · Junior Business Analyst</h3>
+        <p class="meta">Jan 2021 – Jul 2023</p>
         <p>
-          I’m someone who finds inspiration in both the quiet moments and the big, creative bursts. Producing music is my
-          playground, where I can experiment, layer sounds, and build something that feels alive. Writing short stories
-          gives me that same rush, letting me create worlds and characters that stick with you. And then there’s hot yoga,
-          my reset button. It keeps me balanced, challenges me in the best ways, and reminds me to slow down and breathe.
-          Whether I’m behind a laptop, a mixing board, or on the mat, I’m always chasing that feeling of creating
-          something that matters, something that leaves an impact.
+          Acted as PIM product owner; onboarded 200+ vendors and scaled data ops for 14K+ SKUs while coordinating
+          SFCC integrations and QA for reliable releases.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Pet Supermarket · Web Catalog Specialist</h3>
+        <p class="meta">Aug 2018 – Jan 2021</p>
+        <p>
+          Implemented the company’s first PIM and maintained 14K products; published 150+ new web items weekly and
+          drove promo execution to support ecommerce growth.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Pet Supermarket · Digital Marketing Specialist</h3>
+        <p class="meta">Oct 2015 – Aug 2018</p>
+        <p>
+          Onboarded Oracle Responsys and managed a 1.5M list; warmed up the IP and lifted email open rate 30%,
+          increasing site traffic by 17% through data-driven campaigns.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Pet Supermarket · Ecommerce Specialist</h3>
+        <p class="meta">Jul 2015 – Aug 2015</p>
+        <p>
+          Supported store migration and site redesign; managed Amazon Seller ops and introduced faceted search
+          to improve product discovery.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Pet Supermarket · Sales Associate</h3>
+        <p class="meta">Jul 2013 – Apr 2015</p>
+        <p>
+          Delivered high-touch customer service and achieved sales goals through product expertise and relationship building.
         </p>
       </div>
     </div>
-  </details>
+
 </section>
 
-<!-- RECOMMENDATIONS (collapsible, matches About Me width) -->
-<section id="recommendations" class="ab-module">
-  <details id="rec-details" class="ab-card">
-    <summary class="ab-header">
-      <h2 class="ab-title">Recommendations</h2>
-      <span class="ab-kicker">colleagues • leaders</span>
-      <span class="ab-caret" aria-hidden="true"></span>
-    </summary>
 
-    <div class="rec-body">
-      <!-- Recommendation block -->
-      <article class="rec-card">
-        <header class="rec-head">
-          <h3 class="rec-name">Navin Anand</h3>
-          <a class="rec-link" href="https://www.linkedin.com/in/navin-anand/" target="_blank" rel="noopener">LinkedIn</a>
-        </header>
-        <p class="rec-meta">
-          <span class="rec-role">Chief Technology Officer (worked with Phillip on the same team)</span> ·
-          <span class="rec-company">FlexShopper Inc.</span> ·
-          <time datetime="2025-08-09">August 9, 2025</time>
-        </p>
-        <p class="rec-blurb">
-       Phil was part of our PMO team, where he consistently demonstrated adaptability, and strategic thinking. Starting within the Development PMO, Phil quickly pivoted to the Business PMO without missing a beat—showing his ability to bridge technical and business perspectives seamlessly.<br><br>
+<!-- =========================
+     Recommendations
+========================== -->
+<section id="recommendations" class="wrap big-section rec-section">
+  <div class="section-header collapsed">
+    <h2>Recommendations</h2>
+    <span class="hint">Expand</span>
+  </div>
 
-Phil effectively managed a diverse set of stakeholders, including external partners, internal business SMEs, and development teams. He excelled at facilitating discussions with all key parties to prioritize initiatives, ensuring that our backlog was always aligned with ROI-driven decision-making. His command of Jira, Confluence, Asana, and other PM tools made him a highly efficient and well-organized PM/BA/PO<br><br>
-
-From day one, Phil took on large-scale programs with confidence and delivered results—Logicbroker being a standout example. His ability to coordinate complex projects, align cross-functional teams, and keep everyone focused on shared goals made him an indispensable part of our success.<br><br>
-
-I would recommend Phil for any program or project management role—his combination of adaptability, and results-oriented leadership is truly top-tier.
-        </p>
-      </article>
-
-      <article class="rec-card">
-        <header class="rec-head">
-          <h3 class="rec-name">Joseph Zannucci</h3>
-          <a class="rec-link" href="https://www.linkedin.com/in/dennis-owcarz-7500a27/" target="_blank" rel="noopener">LinkedIn</a>
-        </header>
-        <p class="rec-meta">
-          <span class="rec-role">Project Manager IT/DEV & Scrum Master (managed Phillip directly)</span> ·
-          <span class="rec-company">FlexShopper Inc.</span> ·
-          <time datetime="2025-08-14">August 14, 2025</time>
-        </p>
-        <p class="rec-blurb">
-          I'm happy to recommend Phill, who reported directly to me at Flexshopper. I worked with him on several projects, and he was consistently reliable, organized, and eager to grow.<br><br>
-
-He played a key role in managing off-cycle requests from our Merchandising team and was a huge help in supporting payment process integrations. No matter the task, he approached it with a positive attitude and strong attention to detail. <br><br>
-
-Phill was also a great team player—easy to work with and always willing to lend a hand. I’m confident he’ll bring the same energy and dedication to any role he takes on.
+  <div class="section-body rec-content">
+    <div class="grid cols-2">
+      <article class="card">
+        <h3>Navin Anand</h3>
+        <p class="meta">Chief Technology Officer (worked with Phillip on the same team) · FlexShopper Inc. · August 9, 2025</p>
+        <p>
+          Phil was part of our PMO team, where he consistently demonstrated adaptability, and strategic thinking.
+          Starting within the Development PMO, Phil quickly pivoted to the Business PMO without missing a beat—showing
+          his ability to bridge technical and business perspectives seamlessly.<br><br>
+          Phil effectively managed a diverse set of stakeholders, including external partners, internal business SMEs,
+          and development teams. He excelled at facilitating discussions with all key parties to prioritize initiatives,
+          ensuring that our backlog was always aligned with ROI-driven decision-making. His command of Jira, Confluence,
+          Asana, and other PM tools made him a highly efficient and well-organized PM/BA/PO<br><br>
+          From day one, Phil took on large-scale programs with confidence and delivered results—Logicbroker being a standout
+          example. His ability to coordinate complex projects, align cross-functional teams, and keep everyone focused on
+          shared goals made him an indispensable part of our success.<br><br>
+          I would recommend Phil for any program or project management role—his combination of adaptability, and results-oriented
+          leadership is truly top-tier.
         </p>
       </article>
 
-       <article class="rec-card">
-        <header class="rec-head">
-          <h3 class="rec-name">Moe Sheikha</h3>
-          <a class="rec-link" href="https://www.linkedin.com/in/mohanads/" target="_blank" rel="noopener">LinkedIn</a>
-        </header>
-        <p class="rec-meta">
-          <span class="rec-role">Software Development Manager (worked with Phillip but on different teams)</span> ·
-          <span class="rec-company">FlexShopper Inc.</span> ·
-          <time datetime="2025-08-19">August 19, 2025</time>
-        </p>
-        <p class="rec-blurb">
-       I had the pleasure of working with Phil at FlexShopper, where he consistently impressed me with his thoroughness and ability to keep projects on track. He has a great eye for detail, asks thoughtful questions, and ensures that nothing slips through the cracks. Beyond his strong work ethic, Phil is approachable and easy to work with, which makes collaboration smooth and effective. I’d gladly work with him again on any project.
+      <article class="card">
+        <h3>Joseph Zannucci</h3>
+        <p class="meta">Project Manager IT/DEV & Scrum Master (managed Phillip directly) · FlexShopper Inc. · August 14, 2025</p>
+        <p>
+          I'm happy to recommend Phill, who reported directly to me at Flexshopper. I worked with him on several projects,
+          and he was consistently reliable, organized, and eager to grow.<br><br>
+          He played a key role in managing off-cycle requests from our Merchandising team and was a huge help in supporting
+          payment process integrations. No matter the task, he approached it with a positive attitude and strong attention
+          to detail. <br><br>
+          Phill was also a great team player—easy to work with and always willing to lend a hand. I’m confident he’ll bring
+          the same energy and dedication to any role he takes on.
         </p>
       </article>
 
-      <!-- Duplicate <article class="rec-card">…</article> for more -->
+      <article class="card">
+        <h3>Moe Sheikha</h3>
+        <p class="meta">Software Development Manager (worked with Phillip but on different teams) · FlexShopper Inc. · August 19, 2025</p>
+        <p>
+          I had the pleasure of working with Phil at FlexShopper, where he consistently impressed me with his thoroughness
+          and ability to keep projects on track. He has a great eye for detail, asks thoughtful questions, and ensures that
+          nothing slips through the cracks. Beyond his strong work ethic, Phil is approachable and easy to work with, which
+          makes collaboration smooth and effective. I’d gladly work with him again on any project.
+        </p>
+      </article>
     </div>
-  </details>
+
+    <div class="about-inline card">
+      <h3>Who I Am</h3>
+      <p>I love bringing order to complexity and finding creative solutions in systems and in life.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Scoped styling: inherits width from .ab-module/.ab-card like About Me -->
-<style>
-  /* Do NOT set max-width here; About Me width comes from your .ab-module/.ab-card CSS */
-  #recommendations .rec-body {
-    padding: 1.25rem;
-    background: #141414;       /* slightly lighter than black bg */
-    border: 1px solid #262626;
-    border-top: none;           /* ab-card border likely on summary */
-    border-radius: 0 0 14px 14px;
-  }
-
-  #recommendations .rec-card {
-    background: #0f0f0f;
-    border: 1px solid #222;
-    border-radius: 12px;
-    padding: 1rem 1rem 1.1rem;
-    margin: 0 0 1rem 0;
-    color: #eaeaea;
-  }
-
-  #recommendations .rec-head {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    margin-bottom: .35rem;
-  }
-
-  #recommendations .rec-name { margin: 0; font-size: 1.05rem; color: #fff; }
-  #recommendations .rec-link { margin-left: auto; font-size: .92rem; color: #4da3ff; text-decoration: none; }
-  #recommendations .rec-link:hover { text-decoration: underline; }
-
-  #recommendations .rec-meta { margin: 0; font-size: .9rem; color: #b5bac1; }
-  #recommendations .rec-blurb { margin: .6rem 0 0; color: #dddddd; line-height: 1.55; }
-
-  @media (prefers-reduced-motion: no-preference) {
-    #recommendations .rec-card { transition: transform .12s ease; }
-    #recommendations .rec-card:hover { transform: translateY(-1px); }
-  }
-</style>
-
-<!-- Optional: open the section when a link points to #recommendations -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const details = document.getElementById('rec-details');
-    if (details) details.open = false; // keep closed on load
-    document.querySelectorAll('a[href="#recommendations"]').forEach(a => {
-      a.addEventListener('click', () => {
-        setTimeout(() => { if (details) details.open = true; }, 0);
-      });
-    });
-  });
-</script>
 
 
+    </section>
 
-<!-- SCOPED STYLES (keep with this section or move to your CSS file) -->
-<style>
-  :root{
-    --ab-bg: #0a0c12;              /* page background (darker) */
-    --ab-card: #111318;            /* card background (slightly lighter) */
-    --ab-text: #e7e9ee;
-    --ab-muted: #9aa2b1;
-    --ab-border: rgba(255,255,255,.08);
-    --ab-shadow: 0 10px 28px rgba(0,0,0,.35);
-    --ab-radius: 16px;
-  }
-
-  .ab-module{ margin: 2rem 0; }
-
-  /* Encapsulating card */
-  .ab-card{
-    background: var(--ab-card);
-    color: var(--ab-text);
-    border: 1px solid var(--ab-border);
-    border-radius: var(--ab-radius);
-    box-shadow: var(--ab-shadow);
-    padding: clamp(1rem, 2.5vw, 1.75rem);
-    overflow: hidden; /* ensure header content stays inside the box */
-  }
-
-  /* Collapsible header */
-  .ab-header{
-    list-style: none;
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 1fr auto 1.5rem; /* title | kicker | caret */
-    align-items: center;
-    gap: .75rem;
-    border-bottom: 1px dashed var(--ab-border);
-    padding-bottom: .75rem;
-    margin-bottom: 1rem;
-  }
-  .ab-card > summary::-webkit-details-marker{ display: none; } /* hide native marker */
-  .ab-title{ margin: 0; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); }
-  .ab-kicker{ color: var(--ab-muted); font-size: .95rem; white-space: nowrap; }
-
-  /* Caret */
-  .ab-caret{
-    width: 1rem; height: 1rem; justify-self: end;
-    border-right: 2px solid rgba(231,233,238,.85);
-    border-bottom: 2px solid rgba(231,233,238,.85);
-    transform: rotate(45deg); /* ▼ */
-    transition: transform .18s ease;
-  }
-  details[open] .ab-caret{ transform: rotate(-135deg); } /* ▲ */
-
-  /* Content layout: image left, text right */
-  .ab-grid{
-    display: grid;
-    grid-template-columns: minmax(240px, 40%) 1fr;
-    gap: 1.25rem;
-  }
-  .ab-media{
-    margin: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--ab-border);
-  }
-  .ab-media img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .ab-body p{ margin: 0; line-height: 1.6; color: var(--ab-text); }
-
-  /* Responsive: stack image and text on small screens */
-  @media (max-width: 768px){
-    .ab-grid{ grid-template-columns: 1fr; }
-  }
-</style>
-
-<!-- JS: keep closed by default; open only when an anchor #about-me is clicked or loaded -->
-<script>
-(function(){
-  const details = document.getElementById('about-details');
-  const section = document.getElementById('about-me');
-
-  function openAbout(){
-    if (!details.open) details.open = true;
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-  function closeAbout(){
-    if (details.open) details.open = false;
-  }
-
-  // Closed on normal load; open only if hash is #about-me
-  if (location.hash === '#about-me') openAbout(); else closeAbout();
-
-  // Open when any link explicitly targets #about-me
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href="#about-me"]');
-    if (!a) return;
-    e.preventDefault();
-    openAbout();
-    history.pushState(null, '', '#about-me');
-  });
-
-  // Handle back/forward navigation
-  window.addEventListener('hashchange', () => {
-    if (location.hash === '#about-me') openAbout();
-    else closeAbout();
-  });
-
-  /* Optional: align anchors nicely if you have a sticky nav (adjust height) */
-  section.style.scrollMarginTop = '84px';
-})();
-</script>
-
-
-   
-<!-- CONTACT FORM (theme-integrated) -->
+   <!-- =========================
+     Contact Me
+========================== -->
 <section id="form" class="wrap">
-<div class="module-header mb-3">
-  <h2 class="module-title"><i class="bi bi-chat-dots"></i> Let's Chat</h2>
-  <span class="module-kicker"> </span>
-</div>
-
-<div id="contactAlerts" class="mb-3" aria-live="polite" aria-atomic="true"></div>
-
-<form
-  id="contactForm"
-  class="card-dark p-3"
-  action="https://formspree.io/f/mvgqyoby"
-  method="POST"
-  novalidate
->
-  <!-- Name -->
-  <div class="mb-3">
-    <label for="name" class="form-label">Your name</label>
-    <input type="text" id="name" name="name" class="form-control" required autocomplete="name" />
+  <div class="section-title">
+    <h2>Contact Me</h2>
+    <div class="line"></div>
   </div>
 
-  <!-- Email -->
-  <div class="mb-3">
-    <label for="email" class="form-label">Your email</label>
-    <input type="email" id="email" name="email" class="form-control" required autocomplete="email" />
+  <div class="card">
+    <p>If you’d like to get in touch, please fill out the form below. I’ll receive your message directly by email.</p>
+
+    <form action="https://formspree.io/f/mvgqyoby" method="POST">
+      <!-- Name -->
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your name" />
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required placeholder="Your email" />
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
+
+      <!-- Hidden field for subject line -->
+      <input type="hidden" name="_subject" value="New message from your portfolio site!" />
+
+      <!-- Submit button -->
+      <button type="submit" class="btn">Send Message</button>
+    </form>
   </div>
-
-  <!-- Message -->
-  <div class="mb-3">
-    <label for="message" class="form-label">Your message</label>
-    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-  </div>
-
-  <!-- Optional: subject line you’ll see in the email -->
-  <input type="hidden" name="_subject" value="New message from your portfolio site" />
-
-  <!-- Honeypot (spam reducer) -->
-  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
-
-  <button type="submit" id="contactSubmit" class="btn btn-primary">
-    Send
-  </button>
-</form>
+</section>
 
 
+    
 
     <footer class="wrap">
       <p class="foot">© <span id="y"></span> Phill Marquis · Business Systems Analyst</p>
     </footer>
   </main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
 
-  <!-- Opens the Experiences section when user clicks through the experience href -->
+
+  <!-- =========================
+       JavaScript (safe, works with your CSS)
+  ========================== -->
   <script>
-(function () {
-  const details = document.getElementById('xp-details');
-  const section  = document.getElementById('experience');
+document.addEventListener('DOMContentLoaded', () => {
+  // Year in footer
+  const y = document.getElementById('y');
+  if (y) y.textContent = new Date().getFullYear();
 
-  function openExperience() {
-    if (!details.open) details.open = true;
-    // Smooth scroll to align the card nicely
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Mobile menu toggle
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const next = !menu.hidden;
+      menu.hidden = next;
+      burger.setAttribute('aria-expanded', String(!next));
+    });
   }
-  function closeExperience() {
-    if (details.open) details.open = false;
+
+  // Resume Download
+  const RESUME_URL = "https://marquisphill.github.io/Professional-Portfolio/Phillip_DaSilva-Marquis_Resume_2025_Web.pdf";
+  const downloadBtn = document.getElementById('downloadResumeBtn');
+
+  async function forceDownload(url, filename) {
+    try {
+      const res = await fetch(url, { mode: 'cors' });
+      if (!res.ok) throw new Error('Failed to fetch file');
+      const blob = await res.blob();
+      const link = document.createElement('a');
+      const objectUrl = URL.createObjectURL(blob);
+      link.href = objectUrl;
+      link.download = filename || (url.split('/').pop() || 'resume.pdf');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(objectUrl);
+    } catch (err) {
+      window.open(url, '_blank', 'noopener');
+    }
   }
 
-  // 1) Initial load: open only if URL already has #experience
-  if (location.hash === '#experience') openExperience();
-  else closeExperience();
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      forceDownload(RESUME_URL, 'Phillip_DaSilva-Marquis_Resume_2025.pdf');
+    });
+  }
 
-  // 2) In-page navigation: click any link that targets #experience
-  document.addEventListener('click', (e) => {
-    const anchor = e.target.closest('a[href="#experience"]');
-    if (!anchor) return;
-    e.preventDefault();           // stop browser’s default jump
-    openExperience();             // open, then scroll
-    history.pushState(null, '', '#experience'); // keep the hash in the URL
+  // =========================
+  // Expand/Collapse Sections
+  // =========================
+  document.querySelectorAll('.big-section').forEach(section => {
+    const header = section.querySelector('.section-header');
+    const body = section.querySelector('.section-body');
+
+    if (header && body) {
+      header.addEventListener('click', () => {
+        const open = body.classList.toggle('open');
+        header.classList.toggle('collapsed', !open);
+      });
+    }
   });
 
-  // 3) Hash changes (e.g., user clicks other section links)
-  window.addEventListener('hashchange', () => {
-    if (location.hash === '#experience') openExperience();
-    else closeExperience();
+  // =========================
+  // Case Studies Accordion (one open at a time)
+  // =========================
+  const cases = document.querySelectorAll('.case');
+  cases.forEach(c => {
+    const btn = c.querySelector('.read-more');
+    btn.addEventListener('click', e => {
+      e.stopPropagation(); // don’t trigger section collapse
+      cases.forEach(other => {
+        if (other !== c) other.classList.remove('open');
+      });
+      c.classList.toggle('open');
+    });
   });
+});
+// Auto-expand section when clicking nav links
+document.querySelectorAll('.menu a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId + '.big-section');
+    if (targetSection) {
+      const header = targetSection.querySelector('.section-header');
+      const body = targetSection.querySelector('.section-body');
 
-  // 4) Nice offset if you have a sticky navbar
-  // (Adjust 84 to your navbar height)
-  document.documentElement.style.scrollBehavior = 'smooth';
-  document.querySelectorAll('section').forEach(s => s.style.scrollMarginTop = '84px');
-})();
-</script>
+      if (header && body && !body.classList.contains('open')) {
+        body.classList.add('open');
+        header.classList.remove('collapsed');
+      }
+    }
+  });
+});
 
 
-
-  
+  </script>
 </body>
 </html>
