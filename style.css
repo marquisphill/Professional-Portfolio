@@ -1,57 +1,500 @@
-/* Custom Stylesheet for Professional Portfolio */
-
-/* Use the imported Inter font */
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #333;
+/* ================
+   Root Colors (Dark Mode)
+   ================ */
+:root {
+  --bg: #0b0f1a;
+  --panel: #121826;
+  --ink: #e6ecff;
+  --muted: #9bb0ff;
+  --accent: #7aa2ff;
+  --accent-2: #b6c6ff;
+  --line: #1d2536;
 }
 
-/* Smooth scrolling for anchor links */
+/* ================
+   Base
+   ================ */
+* {
+  box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
 }
-
-/* Offset top sections to account for fixed navbar */
-section {
-  scroll-margin-top: 70px;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(180deg, var(--bg), #0d1220 30%, #0a0f1a);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Hero background image */
-#hero {
-  background-image: url('images/hero.png');
-  background-size: cover;
-  background-position: center;
-  min-height: 80vh;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  position: relative;
-  z-index: 0;
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-#hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
-  z-index: -1;
+/* Headings */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 12px;
 }
-
-/* Section headings */
+h1 {
+  font-size: 2rem;
+}
 h2 {
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+h3 {
+  font-size: 1.2rem;
 }
 
-/* Cards */
-.card-title {
-  font-weight: 600;
+/* Paragraphs */
+p {
+  margin: 0 0 12px;
 }
 
-/* Footer text */
-footer small {
-  font-size: 0.875rem;
+/* Lists */
+ul.list {
+  margin: 10px 0 0 18px;
+}
+ul.list li {
+  margin-bottom: 6px;
+}
+
+/* ================
+   Header / Nav
+   ================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9, 13, 24, .85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+.menu a {
+  margin-left: 18px;
+}
+
+/* ================
+   Layout
+   ================ */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 20px;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.section-title .line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ================
+   Hero
+   ================ */
+.journey-hero {
+  text-align: center;
+  margin: 60px auto;
+}
+.journey-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin: 24px 0;
+}
+.journey-btn {
+  font-size: 1.1rem;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #0b1220;
+  transition: transform .2s ease;
+}
+.journey-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================
+   Cards
+   ================ */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  color: var(--ink);
+}
+.grid {
+  display: grid;
+  gap: 18px;
+}
+.grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 900px) {
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tags */
+.tagset {
+  margin-top: 8px;
+}
+.tag {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 4px 8px;
+  margin: 4px 6px 0 0;
+  color: var(--accent-2);
+  font-size: .9rem;
+}
+
+/* About inline cards */
+.about-inline {
+  margin-top: 28px;
+  background: #161b2c;
+}
+
+/* ================
+   Timeline (Experience)
+   ================ */
+.timeline {
+  border-left: 2px solid var(--accent);
+  margin-left: 20px;
+  padding-left: 20px;
+  display: grid;
+  gap: 18px;
+}
+.timeline-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: var(--accent-2);
+}
+.timeline-item .meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+/* ================
+   Buttons
+   ================ */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #0b1220;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--line);
+}
+
+/* ================
+   Contact Form
+   ================ */
+#form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+#form input,
+#form textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0d1424;
+  color: var(--ink);
+}
+#form button {
+  margin-top: 8px;
+}
+
+/* ================
+   Footer
+   ================ */
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+.foot {
+  color: #8ea0e6;
+  font-size: .9rem;
+}
+
+/* ================
+   Floating Contact Button
+   ================ */
+.contact-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  color: #0b1220;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.contact-fab:hover {
+  transform: scale(1.05);
+}
+
+/* ================
+   Modal
+   ================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+.modal-content {
+  background: var(--panel);
+  padding: 28px;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 90%;
+  color: var(--ink);
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #0d1424;
+  color: var(--ink);
+}
+/* Case Studies Section */
+.case-section .section-toggle {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.case-studies {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: all 0.5s ease;
+}
+.case-studies.open {
+  max-height: 5000px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.case {
+  transition: all 0.4s ease;
+}
+.case-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.case-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+.case.open .case-body {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.read-more {
+  flex-shrink: 0;
+}
+/* Case Studies Section */
+.case-studies {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: all 0.5s ease;
+}
+.case-studies.open {
+  max-height: 5000px; /* plenty to expand */
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.case-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+.case.open .case-body {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Experience Section (expand/collapse) */
+.xp-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: all 0.5s ease;
+}
+.xp-content.open {
+  max-height: 5000px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+/* Collapsible Section Styles */
+.big-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 24px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.big-section .section-header:hover {
+  background: #1a2135;
+  transform: scale(1.01);
+}
+.big-section .section-header .hint {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.big-section .section-header.collapsed .hint::after {
+  content: " →";
+}
+.big-section .section-header:not(.collapsed) .hint::after {
+  content: " ↓";
+}
+
+/* Hidden body initially */
+.section-body {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: all 0.5s ease;
+  margin-top: 12px;
+}
+.section-body.open {
+  max-height: 6000px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+/* Reduce spacing between big sections */
+.big-section {
+  margin-bottom: 30px; /* adjust smaller or larger as you like */
+}
+
+.big-section .section-body {
+  margin-top: 6px; /* reduce space between header and expanded content */
+}
+/* Tighten vertical space just for the 3 main sections */
+section.wrap.big-section {
+  /* override the global .wrap vertical padding */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 18px;           /* small gap between sections */
+}
+
+/* no extra gap after the last section */
+section.wrap.big-section:last-of-type {
+  margin-bottom: 0;
+}
+
+/* reduce the gap between the header and the content when open */
+section.wrap.big-section .section-body {
+  margin-top: 6px;               /* was 12px in earlier snippet */
+}
+
+/* remove extra heading margin inside the clickable header block */
+section.wrap.big-section .section-header h2 {
+  margin: 0;
+}
+/* Different color for individual case study cards */
+.case-studies .card {
+  background: #1a2135;   /* darker or lighter than --panel */
+  border: 1px solid var(--accent); /* optional: highlight border */
+}
+
+.case-studies .card.open {
+  background: #222a42;   /* slightly different when expanded */
 }
