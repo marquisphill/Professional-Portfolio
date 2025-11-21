@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Horror Scene Bit Controller</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 1.5rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #05060a;
+      color: #f5f5f5;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .app {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LEFT SIDE: controller + buttons */
+    .left-panel {
+      background: #10131b;
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #222837;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9ea6c5;
+      margin-bottom: 0.25rem;
+    }
+
+    .controller-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .controller-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(to top, #000000, #ffffff);
+      border: 2px solid #3b4254;
+      position: relative;
+      cursor: pointer;
+      touch-action: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .controller-circle::after {
+      /* subtle overlay tick marks (visual hint of segments) */
+      content: "";
+      position: absolute;
+      inset: 10%;
+      border-radius: 50%;
+      border-top: 1px dashed rgba(255,255,255,0.15);
+      border-bottom: 1px dashed rgba(0,0,0,0.4);
+    }
+
+    .controller-label {
+      font-size: 0.95rem;
+      text-align: center;
+      color: #d0d5f5;
+    }
+
+    .controller-label strong {
+      color: #ffffff;
+    }
+
+    .controller-legend {
+      font-size: 0.8rem;
+      color: #a8afce;
+      margin-top: 0.25rem;
+      text-align: center;
+    }
+
+    .controller-legend span {
+      display: inline-block;
+      margin: 0 0.25rem;
+    }
+
+    .buttons-grid {
+      margin-top: 1rem;
+    }
+
+    .buttons-label {
+      font-size: 0.85rem;
+      color: #9ea6c5;
+      margin-bottom: 0.4rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.96);
+      box-shadow: 0 0 0 0 transparent;
+    }
+
+    .btn-series {
+      background: #212739;
+      color: #e9ecff;
+      box-shadow: 0 0 0 1px #343b55;
+    }
+    .btn-series:hover {
+      background: #323a52;
+    }
+
+    .btn-danger {
+      background: #ff5b5b;
+      color: #1a0505;
+      box-shadow: 0 0 0 1px #ff9b9b;
+    }
+    .btn-danger:hover {
+      background: #ff7676;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #ffb3b3;
+      box-shadow: 0 0 0 1px #ffb3b3;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,179,179,0.08);
+    }
+
+    /* RIGHT SIDE: output screen */
+    .right-panel {
+      background: #05070f;
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #222837;
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+    }
+
+    .screen-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .screen-title {
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9ea6c5;
+    }
+
+    .screen-body {
+      flex: 1;
+      background: radial-gradient(circle at top left, #15192a, #040510);
+      border-radius: 0.75rem;
+      padding: 0.75rem;
+      overflow-y: auto;
+      max-height: 420px;
+    }
+
+    .note-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.4rem 0.6rem;
+      margin-bottom: 0.3rem;
+      border-radius: 0.5rem;
+      background: rgba(10,15,30,0.9);
+      border: 1px solid rgba(80,100,160,0.5);
+      font-family: "JetBrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.85rem;
+    }
+
+    .note-text {
+      white-space: pre;
+    }
+
+    .note-meta {
+      font-size: 0.75rem;
+      color: #9aa2cd;
+      margin-top: 0.2rem;
+    }
+
+    .note-delete-btn {
+      border-radius: 999px;
+      border: none;
+      background: #2a3045;
+      color: #ffb3b3;
+      padding: 0.2rem 0.55rem;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+    .note-delete-btn:hover {
+      background: #3a415a;
+    }
+
+    .empty-state {
+      font-size: 0.85rem;
+      color: #70789c;
+      text-align: center;
+      padding: 1.5rem 0.5rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-left: 0.35rem;
+      background: rgba(60,80,160,0.3);
+      color: #b9c3ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Horror Scene Bit Controller</h1>
+
+  <div class="app">
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <div class="section-title">Controller</div>
+      <p style="font-size:0.85rem;color:#a8afce;margin-top:0;">
+        Hold / tap on the gradient circle to pick a controller value (C1–C6), then tap a Series button to add a scene note.
+      </p>
+
+      <div class="controller-wrapper">
+        <div id="controllerCircle" class="controller-circle"></div>
+        <div class="controller-label" id="controllerLabel">
+          Selected: <strong>None</strong>
+        </div>
+        <div class="controller-legend">
+          <div>Static scene mapping (bottom → top):</div>
+          <span>C1 = OM2 (Ordinary Moment)</span>
+          <span>C2 = CF3 (Childhood Fear)</span>
+          <span>C3 = MH2 (Micro Horror)</span><br/>
+          <span>C4 = ES2 (Environmental Shift)</span>
+          <span>C5 = DR2 (Delayed Reveal)</span>
+          <span>C6 = SD2 (Sensory Detail)</span>
+        </div>
+      </div>
+
+      <div class="buttons-grid">
+        <div class="buttons-label">Series A – Variant Applicators (A1–A10)</div>
+        <div class="button-row" id="seriesButtonsRow">
+          <!-- buttons injected by JS -->
+        </div>
+      </div>
+
+      <div style="margin-top:1.25rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+        <button id="clearAllBtn" class="btn-danger">Clear All Notes</button>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <div class="screen-header">
+        <div class="screen-title">Scene Notes Output</div>
+        <div style="font-size:0.8rem;color:#7f89b2;">Format: CONTROLLER [C# + Category + Scene Bit] + SERIES [A#]</div>
+      </div>
+      <div id="notesScreen" class="screen-body">
+        <div id="emptyState" class="empty-state">
+          No notes yet. Select a controller area on the circle, then tap a Series A button.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- CONFIG ---
+
+    // Static scene bits mapped bottom (dark) to top (light)
+    const controllerConfig = [
+      { id: "C1", category: "Ordinary Moment", code: "OM2" },
+      { id: "C2", category: "Childhood Fear", code: "CF3" },
+      { id: "C3", category: "Micro Horror", code: "MH2" },
+      { id: "C4", category: "Environmental Shift", code: "ES2" },
+      { id: "C5", category: "Delayed Reveal", code: "DR2" },
+      { id: "C6", category: "Sensory Detail", code: "SD2" }
+    ];
+
+    const totalControllers = controllerConfig.length; // 6
+    const totalSeriesButtons = 10; // A1-A10
+
+    let activeControllerIndex = null; // 0..5
+
+    // --- DOM ELEMENTS ---
+    const controllerCircle = document.getElementById("controllerCircle");
+    const controllerLabel = document.getElementById("controllerLabel");
+    const seriesButtonsRow = document.getElementById("seriesButtonsRow");
+    const notesScreen = document.getElementById("notesScreen");
+    const emptyState = document.getElementById("emptyState");
+    const clearAllBtn = document.getElementById("clearAllBtn");
+
+    // --- UTILITIES ---
+    function setActiveControllerFromEvent(e) {
+      const rect = controllerCircle.getBoundingClientRect();
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+      // Clamp inside circle bounds
+      const y = Math.min(Math.max(clientY, rect.top), rect.bottom);
+      const relativeFromTop = (y - rect.top) / rect.height; // 0 (top) → 1 (bottom)
+      const t = 1 - relativeFromTop; // 1 (bottom) → 0 (top) inverted
+      let index = Math.floor(t * totalControllers);
+      if (index < 0) index = 0;
+      if (index >= totalControllers) index = totalControllers - 1;
+
+      activeControllerIndex = index;
+      const conf = controllerConfig[index];
+      controllerLabel.innerHTML =
+        'Selected: <strong>' + conf.id + " – " + conf.category + " (" + conf.code + ")" + "</strong>";
+    }
+
+    function addNote(controllerIndex, seriesNumber) {
+      const conf = controllerConfig[controllerIndex];
+      const noteLine = document.createElement("div");
+      noteLine.className = "note-line";
+
+      const text = document.createElement("div");
+      text.className = "note-text";
+      text.textContent =
+        "CONTROLLER [" + conf.id + " | " + conf.category + " | " + conf.code + "]  +  SERIES [A" + seriesNumber + "]";
+
+      const meta = document.createElement("div");
+      meta.className = "note-meta";
+      meta.textContent = "C" + (controllerIndex + 1) + " + A" + seriesNumber;
+
+      const textBlock = document.createElement("div");
+      textBlock.appendChild(text);
+      textBlock.appendChild(meta);
+
+      const delBtn = document.createElement("button");
+      delBtn.className = "note-delete-btn";
+      delBtn.textContent = "Delete";
+      delBtn.addEventListener("click", () => {
+        noteLine.remove();
+        if (!notesScreen.querySelector(".note-line")) {
+          emptyState.style.display = "block";
+        }
+      });
+
+      noteLine.appendChild(textBlock);
+      noteLine.appendChild(delBtn);
+
+      emptyState.style.display = "none";
+      notesScreen.appendChild(noteLine);
+      notesScreen.scrollTop = notesScreen.scrollHeight;
+    }
+
+    // --- EVENT HANDLERS for CONTROLLER ---
+    controllerCircle.addEventListener("mousedown", (e) => {
+      setActiveControllerFromEvent(e);
+      // keep selected even after mouseup; acts as "hold and pick"
+    });
+
+    controllerCircle.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      setActiveControllerFromEvent(e);
+    }, { passive: false });
+
+    controllerCircle.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      setActiveControllerFromEvent(e);
+    }, { passive: false });
+
+    // --- CREATE SERIES BUTTONS ---
+    for (let i = 1; i <= totalSeriesButtons; i++) {
+      const btn = document.createElement("button");
+      btn.className = "btn-series";
+      btn.textContent = "A" + i;
+      btn.dataset.seriesNumber = i.toString();
+      btn.addEventListener("click", () => {
+        if (activeControllerIndex === null) {
+          // No controller selected; ignore or you could alert.
+          return;
+        }
+        addNote(activeControllerIndex, i);
+      });
+      seriesButtonsRow.appendChild(btn);
+    }
+
+    // --- CLEAR ALL ---
+    clearAllBtn.addEventListener("click", () => {
+      const lines = notesScreen.querySelectorAll(".note-line");
+      lines.forEach((n) => n.remove());
+      emptyState.style.display = "block";
+    });
+  </script>
+</body>
+</html>
